@@ -1,8 +1,7 @@
 
-# Battery Nofication Bash Script
+# Battery Notification Bash Script
 
-I was having problems with charging my laptop as sometimes it would over charge
-and sometimes it would shutdown because of discharge. So i made a shell script that notifies me when battery is 100% charged and also when battery reaches at 20% so that i can plug my charger and charge my laptop. You can install this script by following the steps below. Can can also change the values at which it notifies you by editing the values in script which is quiet easy. And this only works on linux as it is a shell script and i am using Ubuntu 23.04.
+I was having problems with charging my laptop as sometimes it would overcharge and sometimes it would shut down because of discharge. So I made a shell script that notifies me when the battery is 100% charged and also when the battery reaches 20% so that I can plug my charger and charge my laptop. You can install this script by following the steps below. Can also change the values at which it notifies you by editing the values in the script which is quite easy. And this only works on Linux as it is a shell script and i am using Ubuntu 23.04.
 
 
 
@@ -38,7 +37,7 @@ dnf install acpi
 ## Clone the Repository
 
 ```bash
-git clone 
+git clone https://github.com/dhruvmistry2000/Battery_Notifier.git
 ```
 
 ## Give permission to the script
