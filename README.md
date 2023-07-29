@@ -49,5 +49,5 @@ sudo chmod +777 battery_notifiier.sh
 ## Run it on startup
 
 ```bash
-sudo mv script_path /etc/init.d
+sudo mv path/to/script /etc/init.d
 ```
