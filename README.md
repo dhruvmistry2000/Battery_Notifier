@@ -16,22 +16,22 @@ I was having problems with charging my laptop as sometimes it would overcharge a
 
 ### Debain and Ubuntu
 ```bash
- apt-get install acpi
+ sudo apt-get install acpi
 ```
 
 ### Alpine 
 ```bash
-apk add acpi
+sudo apk add acpi
 ```
 ### Arch Linux
 
 ```bash
-pacman -S acpi
+sudo pacman -S acpi
 ```
 ### Fedora
 
 ```bash
-dnf install acpi
+sudo dnf install acpi
 ```
 
 ## Clone the Repository
