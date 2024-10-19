@@ -43,7 +43,7 @@ git clone https://github.com/dhruvmistry2000/Battery_Notifier.git
 ## Give permission to the script
 
 ```bash
-sudo chmod +777 battery_notifiier.sh
+sudo chmod +x battery_notifiier.sh
 ```
 
 ## Run it on startup
