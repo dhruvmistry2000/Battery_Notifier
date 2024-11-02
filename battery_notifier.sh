@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# Install required packages based on distribution
+if command -v apt-get &> /dev/null; then
+    # Debian-based
+    sudo apt-get update
+    sudo apt-get install -y acpi libnotify-bin
+elif command -v pacman &> /dev/null; then
+    # Arch-based
+    sudo pacman -Sy acpi libnotify
+elif command -v dnf &> /dev/null; then
+    # Fedora
+    sudo dnf install -y acpi libnotify
+else
+    echo "Unsupported distribution. Please install acpi and libnotify manually."
+    exit 1
+fi
+
 show_notification() {
     notify-send "Battery Notification" "$1"
 }
