@@ -6,15 +6,6 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-# Define the Git repository URL and local directory
-REPO_DIR="$HOME/Github/Battery_Notifier"
-REPO_URL="https://github.com/dhruvmistry2000/Battery_Notifier.git"
-
-# Clone the repository if it doesn't already exist
-if [ ! -d "$REPO_DIR" ]; then
-    git clone "$REPO_URL" "$REPO_DIR"
-fi
-
 # Install required packages based on the Linux distribution
 if command -v apt-get &> /dev/null; then
     # For Debian-based systems
@@ -35,6 +26,21 @@ elif command -v brew &> /dev/null; then
 else
     echo -e "${RED}Unsupported distribution. Please install acpi and libnotify manually.${NC}"
     exit 1
+fi
+
+# Check if the system has a battery
+if ! acpi -b &> /dev/null; then
+    echo -e "${RED}This system does not have a battery. Battery notifier will not run.${NC}"
+    exit 1
+fi
+
+# Define the Git repository URL and local directory
+REPO_DIR="$HOME/Github/Battery_Notifier"
+REPO_URL="https://github.com/dhruvmistry2000/Battery_Notifier.git"
+
+# Clone the repository if it doesn't already exist
+if [ ! -d "$REPO_DIR" ]; then
+    git clone "$REPO_URL" "$REPO_DIR"
 fi
 
 # Define paths for the script and installation
