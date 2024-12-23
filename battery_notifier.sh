@@ -12,6 +12,12 @@ if ! command -v acpi &> /dev/null || ! command -v notify-send &> /dev/null; then
     curl -s https://raw.githubusercontent.com/dhruvmistry2000/Battery_Notifier/refs/heads/main/setup.sh | bash
 fi
 
+# Check if the system has a battery
+if ! acpi -b &> /dev/null; then
+    echo -e "${RED}This system does not have a battery. Battery notifier will not run.${NC}"
+    exit 1
+fi
+
 show_notification() {
     notify-send "Battery Notification" "$1"
 }
